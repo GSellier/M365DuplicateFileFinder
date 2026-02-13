@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="M365DuplicateFileFinder.Console/M365DuplicateFileFinder.Console.csproj" />
+  <Project Path="M365DuplicateFileFinder/M365DuplicateFileFinder.csproj" />
+</Solution>
