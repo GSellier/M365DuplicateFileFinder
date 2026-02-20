@@ -11,7 +11,8 @@ namespace M365DuplicateFileFinder.Readers;
 public class GraphFileReader : IFileReader, IDisposable
 {
     private const string ClientId = "4b9776fd-6e9e-4ab6-b8e4-471749de2151";
-    private const string ConsumerTenantString = "consumers";
+    private const string TenantType_Consumer = "consumers";
+    private const string TenantType_Common = "common";
     private static readonly Uri s_redirectUri = new("http://localhost");
     private static readonly string[] s_scopes = ["Files.Read"];
 
@@ -92,7 +93,7 @@ public class GraphFileReader : IFileReader, IDisposable
     {
         var options = new InteractiveBrowserCredentialOptions
         {
-            TenantId = GraphFileReader.ConsumerTenantString,
+            TenantId = GraphFileReader.TenantType_Common,
             ClientId = GraphFileReader.ClientId,
             RedirectUri = GraphFileReader.s_redirectUri
         };
