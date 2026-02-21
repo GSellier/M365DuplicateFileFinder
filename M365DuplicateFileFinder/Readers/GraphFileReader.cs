@@ -105,6 +105,9 @@ public class GraphFileReader : IFileReader, IDisposable
 
     /// <summary>
     /// Gets the files.
+    /// All files will be retreived, including those in subfolders.
+    /// The analysis will start at the root folder, or from those specified in IdsOfFoldersToQuery during object intialization. Then all their
+    /// subfolders will be read as well.
     /// </summary>
     /// <returns>
     /// A Task object representing the asynchronous operation. The result of the Task is the list of files.
@@ -129,7 +132,8 @@ public class GraphFileReader : IFileReader, IDisposable
 
     /// <summary>
     /// Get all files under the specified parent folders.
-    /// Each subfolder is queried individually. Getting all the files at once would be much faster, but it is not documented and has a strange behavior.
+    /// Each subfolder is queried individually. Getting all the files at once would be much faster, but it is not documented and has a strange
+    /// behavior.
     /// </summary>
     private async Task<IEnumerable<M365File>> GetFilesAsync(string driveId, string[] parentDriveItemIds)
     {
