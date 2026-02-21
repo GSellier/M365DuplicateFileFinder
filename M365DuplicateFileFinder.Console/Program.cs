@@ -2,9 +2,22 @@
 using M365DuplicateFileFinder.Models;
 using M365DuplicateFileFinder.Readers;
 
+// Ids of folders to analyze (not needed if everything should be analyzed).
+string[] testFolderIds =
+    [
+        "01234567890ABCDEF!s549db67ecbf44cb18e0ff854efe005c5"
+    ];
+
 IEnumerable<IEnumerable<M365File>> duplicateFileGroups;
 
-using (var graphReader = new GraphFileReader())
+using
+(
+    var graphReader = new GraphFileReader
+    {
+        // Uncomment the next line to analyze specific folders only. If nothing is specified, everything under the root folder will be analyzed.
+        //IdsOfFoldersToQuery = testFolderIds
+    }
+)
 {
     var duplicateFileFinder = new DuplicateFileFinder
     {
