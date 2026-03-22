@@ -1,0 +1,16 @@
+Prerequisites:
+* The script requires PowerShell 7.6 installed on the computer (https://learn.microsoft.com/powershell/scripting/install/install-powershell).
+
+Execution instructions:
+1. Unzip the files into a folder.
+2. Run the shortcut "Execute PowerShell Script". A terminal window appears.
+3. A browser opens asking to authenticate with the account to analyze.
+4. On first use, a message will ask to consent for the permissions required by the application. The application will show as unverified (I did not apply to be a Microsoft verified publisher).
+5. Once the authentication succeeds, a confirmation message appears in the browser and it can be closed.
+6. The files are then read and analyzed. This may take several minutes depending on the amount of data.
+7. Once the analysis is over, the terminal indicates that a CSV file has been saved into the "Reports" folder.
+8. The terminal window can then be closed.
+9. You can review the list of file duplicates in the CSV file that was generated. The Excel file "AnalyzeDuplicateReport.xlsx" contains some prebuilt pivot tables, it can be used to better understand the content of the CSV file.
+
+Notes:
+* If you do not plan to use the application anymore, it may be good to revoke the permission consent. An email should have been sent to you when you consented to indicate how you can do this.
